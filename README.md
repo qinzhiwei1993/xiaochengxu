@@ -14,12 +14,14 @@
         }
 
 ##### 生命周期切换
-    当前页面	     路由后页面	            触发的生命周期（按顺序）
+    Tab 切换对应的生命周期（以 A、B 页面为 Tabbar 页面，C 是从 A 页面打开的页面，D 页面是从 C 页面打开的页面为例）：
+    
+    当前页面	       路由后页面	            触发的生命周期（按顺序）
     A	              A	                  Nothing happend
     A	              B	                  A.onHide(), B.onLoad(), B.onShow()
     A	              B（再次打开）	        A.onHide(), B.onShow()
     C	              A	                  C.onUnload(),A.onShow()
     C	              B	                  C.onUnload(),B.onLoad(), B.onShow()
     D	              B	                  D.onUnload(),C.onUnload(), B.onLoad(), B.onShow()
-    D（从转发进入）	  A	                   D.onUnload(),A.onLoad(), A.onShow()
-    D（从转发进入）	  B	                   D.onUnload(),B.onLoad(), B.onShow()
+    D（从转发进入）	   A	                   D.onUnload(),A.onLoad(), A.onShow()
+    D（从转发进入）	   B	                   D.onUnload(),B.onLoad(), B.onShow()
