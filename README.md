@@ -18,8 +18,8 @@
     A	              A	                  Nothing happend
     A	              B	                  A.onHide(), B.onLoad(), B.onShow()
     A	              B（再次打开）	        A.onHide(), B.onShow()
-    C	              A	C.onUnload(),     A.onShow()
-    C	              B	C.onUnload(),     B.onLoad(), B.onShow()
-    D	              B	D.onUnload(),     C.onUnload(), B.onLoad(), B.onShow()
-    D（从转发进入）	  A	D.onUnload(),     A.onLoad(), A.onShow()
-    D（从转发进入）	  B	D.onUnload(),      B.onLoad(), B.onShow()
+    C	              A	                  C.onUnload(),A.onShow()
+    C	              B	                  C.onUnload(),B.onLoad(), B.onShow()
+    D	              B	                  D.onUnload(),C.onUnload(), B.onLoad(), B.onShow()
+    D（从转发进入）	  A	                   D.onUnload(),A.onLoad(), A.onShow()
+    D（从转发进入）	  B	                   D.onUnload(),B.onLoad(), B.onShow()
